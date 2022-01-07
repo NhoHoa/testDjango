@@ -1,206 +1,100 @@
-{% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>WIT Trouble record</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends 'problem/base.html' %}
+{% block content %}
+<div class="col-sm-12 col-md-8 col-lg-8 col-xl-8"> 
+  <div class="container-flud">
+    <form class="needs-validation" novalidate>
+      <div class="row">
 
-    <!-- Bootstrap CSS v5.0.2 -->
-    <link href="{% static 'problem/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'problem/css/bootstrap-datepicker.min.css' %}" rel="stylesheet">
-    <link href="{% static 'problem/css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'problem/css/form-validation.css' %}" rel="stylesheet">
-    <link href="{% static 'problem/css/style.css' %}" rel="stylesheet">
-  
-    
-  </head>
-  <body>
-    <div class="wit-web">
-        <header>
-          <div class="menu-header bg-light">
-            <div class="container-fluid">
-              
-              <div class="logo text-start">
-                <img src="{% static 'problem/picture/logo/Logo.webp' %}" alt="No Image">
-              </div>
-              <div class="nav-menu text-end">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                  <div class="container-fluid">
-                    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarScroll">
-                      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Link
-                          </a>
-                          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                          </ul>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
-                        </li>
-                      </ul>
-
-                    </div>
-                  </div>
-                </nav>
-              </div>
-              
-              
-            </div>
-
+        <div class=" col-sm-3 col-md-3 col-lg-3 col-xl-3 pt-2">
+          <label for="problem-code" class="form-label">No.</label>
+          <input type="text" class="form-control" id="problem-code" placeholder="Code" value="" required>
+          <div class="invalid-feedback">
+            Valid first name is required.
           </div>
-        </header>
-        <div class="content">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8"> 
-                <div class="container-flud">
-                  <form class="needs-validation" novalidate>
-                    <div class="row">
-
-                      <div class=" col-sm-3 col-md-3 col-lg-3 col-xl-3 pt-2">
-                        <label for="problem-code" class="form-label">No.</label>
-                        <input type="text" class="form-control" id="problem-code" placeholder="Code" value="" required>
-                        <div class="invalid-feedback">
-                          Valid first name is required.
-                        </div>
-                      </div>
-      
-                      <div class=" col-sm-9 col-md-9 col-lg-9 col-xl-9 pt-2">
-                        <label for="problem-name" class="form-label">Problem Name</label>
-                        <input type="text" class="form-control" id="problem-name" placeholder="Problem Name" required>
-                        <div class="invalid-feedback">
-                          Valid first name is required.
-                        </div>
-                      </div>
-  
-                      <div class=" col-sm-12 col-md-12 col-lg-3 col-xl-3 pt-2">
-                        <label for="PIC" class="form-label">PIC</label>
-                        <input type="text" class="form-control" id="PIC" placeholder="Person in Charge" required>
-                      </div>
-
-                      <div class=" col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-2">
-                        <label for="datepicker" class="form-label">Date</label>
-                        <div class="input-group date" id="datepicker">
-                          <input type="text" class="form-control">
-                          <span class="input-group-append"></span>
-                        </div>
-                      </div>
-
-                      <div class=" col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-2">
-                        <label for="datepicker1" class="col-sm-3 col-md-3 col-lg-3 col-xl-3 form-label"> Finish</label>
-                        <div class="input-group date" id="datepicker1">
-                          <input type="text" class="form-control">
-                          <span class="input-group-append"></span>
-                        </div>
-                      </div>
-  
-                      <div class=" col-sm-12 col-md-12 col-lg-3 col-xl-3 pt-2">
-                        <label for="customer" class="form-label">Customer</label>
-                        <input type="text" class="form-control" id="customer" placeholder="Customer" required>
-                      </div>
-
-                      <div class=" col-sm-6 col-md-6  col-lg-6 col-xl-6 pt-2">
-                        <label for="machine-type" class="form-label">Machine Type</label>                        
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected>Open this select menu</option>
-                          <option value="1">IP3000</option>
-                          <option value="2">IP5800</option>
-                          <option value="3">IP5x00</option>
-                          <option value="4">IP7000</option>
-                          <option value="5">ICT Fixture</option>
-                          <option value="6">.....</option>
-  
-                        </select>
-                      </div>
-                      <div class=" col-sm-6 col-md-6 col-lg-6 col-xl-6 pt-2">
-                        <label for="machine-sn" class="form-label">Machine SN</label>
-                        <input type="text" class="form-control" id="machine-sn" placeholder="Machine Serial" required>
-                      </div>
-
-                      <div class="form-check pt-3">
-                        <input type="checkbox" class="form-check-input" id="in-warranty">
-                        <label class="form-check-label" for="in-warrant">In Warranty</label>
-                      </div>
-
-      
-                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3 pt-2">
-                        <label for="Cause" class="form-label">Cause</label>
-                        <textarea class="form-control" id="Cause" rows="2"></textarea>
-                      </div>
-  
-                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3 pt-2">
-                        <label for="short-action" class="form-label">Short term Action</label>
-                        <textarea class="form-control" id="short-action" rows="2"></textarea>
-                      </div>
-  
-                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3 pt-2">
-                        <label for="long-action" class="form-label">Long term Action</label>
-                        <textarea class="form-control" id="long-action" rows="2"></textarea>
-                      </div>
-                      
-                      <div class="mb-3">
-                        <label for="formFileMultiple" class="form-label">Select Picture or File of the problem</label>
-                        <input class="form-control" type="file" id="formFileMultiple" multiple>
-                      </div>
-  
-                    </div> 
-                    <button class="w-100 btn btn-primary btn-lg" type="submit">Update the problem</button>
-                  </form>  
-                  
-                </div>                  
-              </div>
-              <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4"> 
-                <h1>hahahahahaha</h1>
-             </div>
-            </div>
-          </div>                    
         </div>
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <div class="container d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <p class="col-md-4 mb-0 text-muted">&copy; WIT Co., Ltd</p>
-            <img src="{% static 'problem/picture/logo/Logo.webp' %}" alt="No Image">
-            <ul class="nav col-md-4 justify-content-end">
-              <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-              <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-              <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-              <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-              <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-            </ul>
+
+        <div class=" col-sm-9 col-md-9 col-lg-9 col-xl-9 pt-2">
+          <label for="problem-name" class="form-label">Problem Name</label>
+          <input type="text" class="form-control" id="problem-name" placeholder="Problem Name" required>
+          <div class="invalid-feedback">
+            Valid first name is required.
           </div>
-        </footer>
-    </div>
+        </div>
+
+        <div class=" col-sm-12 col-md-12 col-lg-3 col-xl-3 pt-2">
+          <label for="PIC" class="form-label">PIC</label>
+          <input type="text" class="form-control" id="PIC" placeholder="Person in Charge" required>
+        </div>
+
+        <div class=" col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-2">
+          <label for="datepicker" class="form-label">Date</label>
+          <div class="input-group date" id="datepicker">
+            <input type="text" class="form-control">
+            <span class="input-group-append"></span>
+          </div>
+        </div>
+
+        <div class=" col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-2">
+          <label for="datepicker1" class="col-sm-3 col-md-3 col-lg-3 col-xl-3 form-label"> Finish</label>
+          <div class="input-group date" id="datepicker1">
+            <input type="text" class="form-control">
+            <span class="input-group-append"></span>
+          </div>
+        </div>
+
+        <div class=" col-sm-12 col-md-12 col-lg-3 col-xl-3 pt-2">
+          <label for="customer" class="form-label">Customer</label>
+          <input type="text" class="form-control" id="customer" placeholder="Customer" required>
+        </div>
+
+        <div class=" col-sm-6 col-md-6  col-lg-6 col-xl-6 pt-2">
+          <label for="machine-type" class="form-label">Machine Type</label>                        
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="1">IP3000</option>
+            <option value="2">IP5800</option>
+            <option value="3">IP5x00</option>
+            <option value="4">IP7000</option>
+            <option value="5">ICT Fixture</option>
+            <option value="6">.....</option>
+
+          </select>
+        </div>
+        <div class=" col-sm-6 col-md-6 col-lg-6 col-xl-6 pt-2">
+          <label for="machine-sn" class="form-label">Machine SN</label>
+          <input type="text" class="form-control" id="machine-sn" placeholder="Machine Serial" required>
+        </div>
+
+        <div class="form-check pt-3">
+          <input type="checkbox" class="form-check-input" id="in-warranty">
+          <label class="form-check-label" for="in-warrant">In Warranty</label>
+        </div>
+
+
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3 pt-2">
+          <label for="Cause" class="form-label">Cause</label>
+          <textarea class="form-control" id="Cause" rows="2"></textarea>
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3 pt-2">
+          <label for="short-action" class="form-label">Short term Action</label>
+          <textarea class="form-control" id="short-action" rows="2"></textarea>
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3 pt-2">
+          <label for="long-action" class="form-label">Long term Action</label>
+          <textarea class="form-control" id="long-action" rows="2"></textarea>
+        </div>
+        
+        <div class="mb-3">
+          <label for="formFileMultiple" class="form-label">Select Picture or File of the problem</label>
+          <input class="form-control" type="file" id="formFileMultiple" multiple>
+        </div>
+
+      </div> 
+      <button class="w-100 btn btn-primary btn-lg" type="submit">Update the problem</button>
+    </form>  
     
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="{% static 'problem/js/jquery.js' %}"></script>
-    <script src="{% static 'problem/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'problem/js/form-validation.js' %}"></script>
-    <script src="{% static 'problem/js/bootstrap-datepicker.min.js' %}"></script>
-    <script type="text/javascript">
-      $(function() {
-        $('#datepicker').datepicker();
-        $('#datepicker1').datepicker();
-      });
-    </script>
-
-
-
- 
-  </body>
-</html>
+  </div>                  
+</div>
+{% endblock %}
